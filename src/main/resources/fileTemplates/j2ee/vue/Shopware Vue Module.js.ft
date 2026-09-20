@@ -1,0 +1,38 @@
+import './component/${NAME}-index';
+
+const {Module} = Shopware;
+
+Module.register('${NAME}', {
+    type: '${TYPE}',
+    title: '${NAME}.general.title',
+    description: '${NAME}.general.description',
+    color: '${COLOR}',
+    icon: '${ICON}',
+
+    routes: {
+        index: {
+            component: '${NAME}-index',
+            path: 'index'
+        }
+    },
+
+    #if (${PARENT_MODULE} != "")
+        navigation: [{
+            id: '${NAME}',
+            label: '${NAME}.general.title',
+            color: '${COLOR}',
+            icon: '${ICON}',
+            parent: '${PARENT_MODULE}',
+            position: 40
+        }],
+#end
+
+    #if (${VISIBLE_IN_SETTINGS} == true)
+        settingsItem: [{
+            group: 'system',
+            to: '${NAME}.index',
+            icon: '${ICON}',
+            name: '${NAME}.general.title'
+        }],
+    #end
+})

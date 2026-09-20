@@ -1,0 +1,6 @@
+//noinspection CssUnknownTarget
+@import "~scss/variables";
+
+.sw-cms-el-component-${NAME} {
+  width: 100%;
+}

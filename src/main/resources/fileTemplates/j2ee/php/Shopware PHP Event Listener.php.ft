@@ -1,0 +1,15 @@
+<?php
+
+namespace ${NAMESPACE};
+
+use ${EVENT};
+use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
+
+#[AsEventListener]
+class ${CLASSNAME}
+{
+    public function __invoke(${EVENT_SHORT} $event): void
+    {
+
+    }
+}
